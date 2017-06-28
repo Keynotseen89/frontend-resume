@@ -163,17 +163,22 @@ var charEscape = function(_html){
 function displayContact(){
 	//Displays mobile Information
 	var formattedMobile = HTMLmobile.replace("%data%", bio["contacts"].mobile);
-	$("#header").append(formattedMobile);
+	$("#topContacts").append(formattedMobile);
+	$("#footerContacts").append(formattedMobile);
 	//Displays Email Information
 	var formattedEmail = HTMLemail.replace("%data%", bio["contacts"].email);
-	$("#header").append(formattedEmail);
+	$("#topContacts").append(formattedEmail);
+	$("#footerContacts").append(formattedEmail);
 	//Displays Github URL
 	var formattedGithub = HTMLgithub.replace("%data%", bio["contacts"].gitHub);
-	$("#header").append(formattedGithub);
+	$("#topContacts").append(formattedGithub);
+	$("#footerContacts").append(formattedGithub);
 	//Displays Linkedin URL
 	var formattedLinkedin = HTMLblog.replace("%data%", bio["contacts"].linkedin);
-	$("#header").append(formattedLinkedin);
+	$("#topContacts").append(formattedLinkedin);
+	$("#footerContacts").append(formattedLinkedin);
 	
+
 	//Display Bio Photo
 	var formatImage = HTMLbioPic.replace("%data%",bio.bioPic);
     $("#header").append(formatImage);
@@ -189,8 +194,9 @@ function displayBio(){
 	for(var i = 0; i < bio.skills.length; i++)
 	{
 		var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-		$("#skills").append(formattedSkill);
+			$("#skills").append(formattedSkill);	
 	}//end of for loop	
+	
 }//end of if statement
 }//end of displayBio
 
@@ -278,16 +284,21 @@ projects.display = function(){
 projects.display();
 
 function displayEducation()
-{
+{	
+	//Education header
 	$("#education").append(HTMLschoolStart);
 	for(var edu = 0; edu < education.schools.length; edu++)
-	{
+	{	
+		//School name
 		var formattedEdName = HTMLschoolName.replace("%data%",education.schools[edu].name);
-		$(".education-entry:last").append(formattedEdName);
+		//$(".education-entry:last").append(formattedEdName);
 		
+		//Degree name
 		var formattedschoolDegree = HTMLschoolDegree.replace("%data%",education.schools[edu].degree); 
-		$(".education-entry:last").append(formattedschoolDegree);
+		//$(".education-entry:last").append(formattedschoolDegree);
 		
+		var joinedLayout = formattedEdName + formattedschoolDegree;
+		$(".education-entry:last").append(joinedLayout);
 		
 		var formattedschoolDate = HTMLschoolDates.replace("%data%",education.schools[edu].dates);
 		$(".education-entry:last").append(formattedschoolDate);	
@@ -307,11 +318,12 @@ function displayEducation()
 	
 	//Displays title of Course
 	var formattedonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineEd].title);
-	$(".education-entry:last").append(formattedonlineTitle);
 	
 	//Displays OnlineSchool Name
 	var formattedonlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineEd].school);
-	$(".education-entry:last").append(formattedonlineSchool);
+		
+	var templayout = formattedonlineTitle + formattedonlineSchool;
+	$(".education-entry:last").append(templayout);
 	
 	//Displays Date taken
 	var formattedschoolDate = HTMLonlineSchool.replace("%data%",education.onlineCourses[onlineEd].dates);
