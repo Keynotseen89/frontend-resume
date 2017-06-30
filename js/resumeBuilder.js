@@ -80,12 +80,17 @@
 	"projects": [{
 		"title": "SAOWikiFolder",
 		"dates": "08-05-2016",
-		"description": "This project display the Character of Sword Art Online and gives some information"
-		+" about the first season Characters.  Followed by the Character on a second screen not on the same as the information." ,
+		"description": "This project display the Character of Sword Art Online and gives some information about the first season Characters.  Followed by the Character on a second screen not on the same as the information.",
 		"images": [
 			"images/SAOmenu.PNG", "images/SAOChar.PNG", "images/SAOChar2.PNG"
 		]
-
+	}, {
+		"title": "PETO",
+		"dates": "01-01-2017",
+		"description": "This project is an Adnroid based application called Petfolio.  It allows the user to keep a personal file for their pets.  It has a few buttons to move between screens.  This project is still in the finishing stages.",
+		"images": [
+			"images/PetfolioMenu.PNG", "images/Petfolio1.PNG"
+		]
 	}]
 }
 
